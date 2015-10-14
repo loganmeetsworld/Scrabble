@@ -13,9 +13,13 @@ module Scrabble
 		end
 
 		def play(word)
+			@plays.push(word)
+
+			# if won?
+			# 	returns false
+			# end
 			# Adds the input word to the plays Array
 			# Returns false if player has already won
-
 		end
 
 		def self.total_score
