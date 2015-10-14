@@ -4,7 +4,7 @@ Use TDD to create classes that would be used to build a scrabble game. Don't act
 
 ## Project Expectations
 
-From the project root, you should be able to execute all of your specs by just running `rspec`. All of your classes should be in their own files in `lib/`, and the entire project should be namespaced in a module called `Scrabble`.
+From the project root, you should be able to execute all of your specs by just running `rspec`. All of your classes should be in their own files in `lib/`, and the entire project should be in a module called `Scrabble`.
 
 Your spec descriptions should be meaningful and organized into `context` blocks that reflect your intent on how to use the code.
 
@@ -43,6 +43,7 @@ Create a project structure which contains:
 |J, X                          |   8  |
 |Q, Z                          |   10 |
 
+
 ## Wave 1
 
 ### Primary Requirements
@@ -50,16 +51,16 @@ Create a `Scrabble` class with a minimum of 8 specs. The class should have the f
 - `self.score(word)`: returns the total score value for the given word. The word is input as a string (case insensitive). The chart below shows the point value for a given letter.
 - `self.highest_score_from(array_of_words)`: returns **the word in the array with the highest score**.
     - Note that it’s better to use fewer tiles, so if the top score is tied between multiple words, pick the one with the fewest letters.
-    - Note that there is a greater bonus for using all seven letters. If the top score is tied between multiple words and one used all seven letters, choose the one with seven letters over the one with fewer tiles.
+    - Note that there is a bonus (50 points) for using all seven letters. If the top score is tied between multiple words and one used all seven letters, choose the one with seven letters over the one with fewer tiles.
     - If the there are multiple words that are the same score and same length, pick the first one in supplied list.
 
-<!--
+
 ## Wave 2
 
 ### Primary Requirements
 Create a `Player` class with a minimum of 11 specs. The class should have the following class and instance methods:
 
-- `self.new(name)`: creates a new instance with the instance variable `name` assigned
+- `#initialize(name)`: Called when you use `Player.new`, sets up an instance with the instance variable `name` assigned
 - `#name`: returns the `@name` instance variable
 - `#plays`: returns an Array of the words played by the player
 - `#play(word)`: Adds the input word to the `plays` Array
@@ -70,6 +71,7 @@ Create a `Player` class with a minimum of 11 specs. The class should have the fo
 - `#highest_word_score`: Returns the `highest_scoring_word` score.
 
 
+<!--
 ## Wave 3
 
 ### Primary Requirements
