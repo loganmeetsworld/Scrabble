@@ -17,6 +17,12 @@ describe Scrabble::Scrabble do
       expect(Scrabble::Scrabble.score("quiz")).to eq 22
       expect(Scrabble::Scrabble.score("it")).to eq 2
       expect(Scrabble::Scrabble.score("HanDLeR")).to eq 11
-    end
-  end
-end
+    end#end of it "adds points properly" block
+  end#end of describe score do block
+
+  describe "#highest_score_from" do
+    it "returns word with highest score under normal circumstances" do
+      expect(Scrabble::Scrabble.highest_score_from(["hello", "quiz", "it", "HanDLeR"])).to eq "quiz"
+    end#end of it returns word with highest score block
+  end#end of describe #highest_score_from block
+end#end of describe Scrabble::Scrabble do block
