@@ -13,10 +13,10 @@ module Scrabble
 		end
 
 		def play(word)
-			@plays.push(word)
-
 			# if won?
 			# 	returns false
+			# else
+				@plays.push(word)
 			# end
 			# Adds the input word to the plays Array
 			# Returns false if player has already won
@@ -24,6 +24,13 @@ module Scrabble
 
 		def self.total_score
 			# Sums up and returns the score of the players words
+			total = 0
+
+			plays.each do |word|
+				total += ScrabbleMod::Scrabble.score(word)
+			end
+
+			return total
 		end
 
 		def self.won?

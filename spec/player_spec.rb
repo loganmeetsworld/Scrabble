@@ -2,13 +2,13 @@ require "./lib/player.rb"
 
 describe "Player" do
   player = Scrabble::Player.new("Norman")
-  
+
   describe "playing Scrabble" do
     player.play("hello")
     player.play("eggplant")
     player.play("coffee")
 
-    context "initializing" do 
+    context "initializing" do
       it "returns a Player object" do
         expect(player).to be_an_instance_of Scrabble::Player
       end
@@ -22,6 +22,9 @@ describe "Player" do
 
     it "adds word" do
       expect(player.plays).to eq ["hello", "eggplant", "coffee"]
+    end
+    it "totals the score" do
+      expect(player.total_score).to eq 34
     end
   end
 end
