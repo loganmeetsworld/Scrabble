@@ -32,13 +32,17 @@ module Scrabble
 
     def self.highest_score_from(array_of_words)
       best_score = 0
-      winning_word = nil
+      winning_word = ""
+      array_of_words.sort_by! { |s| -s.length }
 
       array_of_words.each do |word|
         current_score = self.score(word)#calling class method from above
         word.downcase!#I don't like that it upcases then downcases, refactor later
-        while current_score > best_score
+        if current_score >= best_score
           best_score = current_score
+          if winning_word.length > word.length
+            winning_word = word
+          end#end of if winning_word block
           winning_word = word
         end#end of if current_score > best_score block
       end#end of array_of_words.each block

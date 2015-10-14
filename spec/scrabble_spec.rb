@@ -24,5 +24,15 @@ describe Scrabble::Scrabble do
     it "returns word with highest score under normal circumstances" do
       expect(Scrabble::Scrabble.highest_score_from(["hello", "quiz", "it", "HanDLeR"])).to eq "quiz"
     end#end of it returns word with highest score block
+    it "returns the shortest of words with the same points" do
+      expect(Scrabble::Scrabble.highest_score_from(["hello", "word", "it", "no"])).to eq "word"
+      expect(Scrabble::Scrabble.highest_score_from(["hello", "word", "it", "no", "dance"])).to eq "word"
+    end#end of it returns the shortest of words block
+    it "returns the first word when two words have equal length and points" do
+      expect(Scrabble::Scrabble.highest_score_from(["hello", "dance", "cat", "on", "it"])).to eq "hello"
+    end
+    it "returns the first word when two words have equal length and points" do
+      expect(Scrabble::Scrabble.highest_score_from(["dance","hello", "cat", "on", "it"])).to eq "dance"
+    end
   end#end of describe #highest_score_from block
 end#end of describe Scrabble::Scrabble do block
