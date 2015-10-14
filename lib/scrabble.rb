@@ -35,9 +35,6 @@ module Scrabble
     end#end for self.score method
 
     def self.highest_score_from(array_of_words)
-      # best_score = 0
-      # winning_word = ""
-      # array_of_words.sort_by! { |s| -s.length }
       score_hash = {}
       winners = []
       winner = nil
@@ -70,32 +67,5 @@ module Scrabble
         return winner = high_scores[0].downcase
       end
     end
-
-    # def self.highest_score_from(array_of_words)
-    #   best_score = 0
-    #   winning_word = ""
-    #
-    #   array_of_words.sort_by! { |s| -s.length }
-    #
-    #   array_of_words.each do |word|
-    #     current_score = self.score(word)#calling class method from above
-    #     word.downcase!#I don't like that it upcases then downcases, refactor later
-    #     if current_score > best_score
-    #       best_score = current_score
-    #       if winning_word.length > word.length
-    #         winning_word = word
-    #       elsif winning_word.length == 7
-    #         winning_word = word
-    #       end#end of if winning_word block
-    #       winning_word = word
-    #     elsif current_score == best_score
-    #       if winning_word.length > word.length
-    #         winning_word = word
-    #       end
-    #     end#end of if current_score > best_score block
-    #   end#end of array_of_words.each block
-    #   return winning_word
-    # end#end of def self.highest_score_from block
-
   end
 end
