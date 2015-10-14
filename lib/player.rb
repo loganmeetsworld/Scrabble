@@ -3,12 +3,18 @@ module Scrabble
 		def initialize(name)
 			# Called when you use Player.new, 
 			# sets up an instance with the instance variable name assigned
+			
 			@name = name
 			# returns the @name instance variable
 
 			@plays = []
 			# Returns an Array of the words played by the player
 		end
+		
+		def plays
+			return words_played
+		end
+
 		def play(word)
 			# Adds the input word to the plays Array
 			# Returns false if player has already won
