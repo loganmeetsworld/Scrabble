@@ -1,4 +1,4 @@
-require "./lib/scrabble.rb"
+require "./lib/scrabble_master.rb"
 
 describe Scrabble::Scrabble do
   describe "#score" do

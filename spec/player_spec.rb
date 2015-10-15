@@ -1,11 +1,11 @@
-require "./lib/player.rb"
+require "./lib/scrabble_master.rb"
 
 describe "Player" do
   player = Scrabble::Player.new("Norman")
 
   describe "playing Scrabble" do
     player.play("hello")
-    player.play("eggplant")
+    player.play("eggs")
     player.play("coffee")
 
     context "initializing" do
@@ -21,10 +21,11 @@ describe "Player" do
     end
 
     it "adds word" do
-      expect(player.plays).to eq ["hello", "eggplant", "coffee"]
+      expect(player.plays).to eq ["hello", "eggs", "coffee"]
     end
+
     it "totals the score" do
-      expect(player.total_score).to eq 34
+      expect(player.total_score).to eq 28
     end
   end
 end
