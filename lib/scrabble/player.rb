@@ -8,6 +8,14 @@ module Scrabble
 			@plays = []
 		end
 
+		def won?
+			if total_score >= 100 
+				return true
+			else
+				return false
+			end
+		end
+		
 		def play(word)
 			if won?
 				false
@@ -24,14 +32,6 @@ module Scrabble
 			end
 
 			return total
-		end
-
-		def won?
-			if total_score >= 100 
-				return true
-			else
-				return false
-			end
 		end
 
 		def highest_scoring_word(word_array)
