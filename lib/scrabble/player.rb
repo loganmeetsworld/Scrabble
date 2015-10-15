@@ -27,7 +27,6 @@ module Scrabble
 		end
 
 		def won?
-			# If the player has over 100 points, returns true, otherwise returns 'false'
 			if total_score >= 100 
 				return true
 			else
@@ -35,13 +34,13 @@ module Scrabble
 			end
 		end
 
-		def self.highest_scoring_word(word_array)
-			# Returns the highest scoring word the user has played.
+		def highest_scoring_word(word_array)
+			@highest_score_word = Scrabble.highest_score_from(word_array)
+			return @highest_score_word
 		end
 
-		def self.highest_word_score()
-			# return highest_scoring_word
-			# Returns the highest_scoring_word score.
+		def highest_word_score
+			return Scrabble.score(@highest_score_word)
 		end
 	end
 end
