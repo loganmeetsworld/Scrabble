@@ -63,11 +63,12 @@ describe "Player" do
 
     it "returns the highest scoring word, #highest_scoring_word(word_array)" do 
       expect(player.highest_scoring_word(["hello", "this", "is", "the", "best"])).to eq "hello"
-      expect(player.highest_scoring_word(["quiz", "number", "zzzzz", "handler"])).to eq "handler"
+      expect(player_2.highest_scoring_word(["quiz", "number", "zzzzz", "handler"])).to eq "handler"
     end
 
     it "returns the highest score, #highest_score" do
-      expect(player.highest_word_score).to eq 61 #refers to last thing passed, which is 'handler'
+      expect(player.highest_word_score).to eq 8
+      expect(player_2.highest_word_score). to eq 61
     end
   end
 end
