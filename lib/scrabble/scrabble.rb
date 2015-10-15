@@ -1,13 +1,13 @@
 module Scrabble
   class Scrabble
     SCORES_HASH = {
-      1 => ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
-      2 => ["D", "G"],
-      3 => ["B", "C", "M", "P"],
-      4 => ["F", "H", "V", "W", "Y"],
-      5 => ["K"],
-      8 => ["J", "X"],
-      10 => ["Q", "Z"]
+      1 => ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"],
+      2 => ["d", "g"],
+      3 => ["b", "c", "m", "p"],
+      4 => ["f", "h", "v", "w", "y"],
+      5 => ["k"],
+      8 => ["j", "x"],
+      10 => ["q", "z"]
     }
     def self.score(word)
       if word[/^[a-zA-Z]+/] != word
@@ -16,7 +16,7 @@ module Scrabble
         return "Cannot have more than seven letters."
       end#end for if word block
 
-      word.upcase!
+      word.downcase!
       total_score = 0
 
       word_array = word.split("")

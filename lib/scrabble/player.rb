@@ -9,25 +9,30 @@ module Scrabble
 		end
 
 		def play(word)
-			# if won?
-			# 	returns false
-			# else
-			@plays.push(word)
-			# end
+			if won?
+				false
+			else
+				@plays.push(word.downcase)
+			end
 		end
 
 		def total_score
 			total = 0
 
 			@plays.each do |word|
-				total += Scrabble.score(word).to_i
+				total += Scrabble.score(word.downcase).to_i
 			end
 
 			return total
 		end
 
-		def self.won?
+		def won?
 			# If the player has over 100 points, returns true, otherwise returns 'false'
+			if total_score >= 100 
+				return true
+			else
+				return false
+			end
 		end
 
 		def self.highest_scoring_word(word_array)

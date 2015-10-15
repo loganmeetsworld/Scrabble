@@ -27,5 +27,9 @@ describe "Player" do
     it "totals the score" do
       expect(player.total_score).to eq 28
     end
+
+    it "returns false if over 100 points" do
+      expect(player.won?).to eq false
+    end
   end
 end
