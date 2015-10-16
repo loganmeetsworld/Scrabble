@@ -28,7 +28,7 @@ module Scrabble
       #returns number of tiles left in bag
 
       tiles.each do |key, value|
-        value += value 
+        value += value
       end
     end
 
