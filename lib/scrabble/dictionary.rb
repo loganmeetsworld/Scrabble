@@ -1,11 +1,12 @@
-require "ruby-dictionary" 
+require "ruby-dictionary"
 
 module Scrabble
 	class Dictionary
+		DICTIONARY = Dictionary.from_file('./support/dictionary.txt', ' ')
 
 		attr_accessor :dictionary
-		def initiliaze 
-			@dictionary = Dictionary.from_file('./support/dictionary.txt', ' ')
+		def initialize
+
 		end
 	end
 end
