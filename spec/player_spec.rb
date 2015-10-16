@@ -14,8 +14,8 @@ describe "Player" do
     #player_2 initialization
     player_2.play("quiz")
     player_2.play("number")
-    player_2.play("zzzzz")
     player_2.play("handler")
+    player_2.play("options")
 
     #player3 initilization
     player_3.play("")
@@ -40,7 +40,7 @@ describe "Player" do
 
     it "adds word, #play(word)" do
       expect(player.plays).to eq ["hello", "eggs", "coffee"]
-      expect(player_2.plays).to eq ["quiz", "number", "zzzzz", "handler"]
+      expect(player_2.plays).to eq ["quiz", "number", "handler", "options"]
       expect(player_3.plays).to eq [""]
     end
 
@@ -49,7 +49,7 @@ describe "Player" do
     end
 
     it "totals the score plus 50 when a seven letter word is used, #total_score" do
-      expect(player_2.total_score).to eq 143
+      expect(player_2.total_score).to eq 152
     end
 
     it "returns 0 when no words are played instead of an error, #total_score" do
@@ -63,7 +63,7 @@ describe "Player" do
 
     it "returns the highest scoring word, #highest_scoring_word(word_array)" do 
       expect(player.highest_scoring_word(["hello", "this", "is", "the", "best"])).to eq "hello"
-      expect(player_2.highest_scoring_word(["quiz", "number", "zzzzz", "handler"])).to eq "handler"
+      expect(player_2.highest_scoring_word(["quiz", "number", "handler"])).to eq "handler"
     end
 
     it "returns the highest score, #highest_score" do

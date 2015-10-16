@@ -12,9 +12,9 @@ describe "Dictionary" do
   end
   context "returns words from dictionary" do
     it "returns valid words only" do
-      expect(@dictionary.valid_word?("ABACAS")).to be_truthy
-      expect(@dictionary.valid_word?("abamp")).to be_truthy
-      expect(@dictionary.valid_word?("flfflflfl")).to eq false
+      expect(Scrabble::Dictionary.valid_word?("ABACAS")).to be_truthy
+      expect(Scrabble::Dictionary.valid_word?("abamp")).to be_truthy
+      expect(Scrabble::Dictionary.valid_word?("flfflflfl")).to eq false
     end
   end
 end

@@ -18,6 +18,11 @@ describe Scrabble::Scrabble do
       expect(Scrabble::Scrabble.score("quiz")).to eq 22
       expect(Scrabble::Scrabble.score("it")).to eq 2
       expect(Scrabble::Scrabble.score("HanDLeR")).to eq 61
+    end
+
+    it "doesn't accept non-dictionary words" do 
+      expect(Scrabble::Scrabble.score("zzzzzzz")).to eq "That is not a valid word."
+      expect(Scrabble::Scrabble.score("goopgoopgoop")).to eq "That is not a valid word." #more than seven, but not valid first
     end#end of it "adds points properly" block
 
     it "adds 50 points for seven letter words" do
@@ -45,7 +50,7 @@ describe Scrabble::Scrabble do
     end
     
     it "has seven letter word win in event of tie" do
-      expect(Scrabble::Scrabble.highest_score_from(["zzzzzz", "bundles", "cat"])).to eq "bundles"
+      expect(Scrabble::Scrabble.highest_score_from(["quiz", "bundles", "cat"])).to eq "bundles"
       expect(Scrabble::Scrabble.highest_score_from(["quizzes", "bundles", "cat"])).to eq "quizzes"
     end
     

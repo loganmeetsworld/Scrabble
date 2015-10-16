@@ -1,5 +1,3 @@
-
-
 module Scrabble
 	class Dictionary
 
@@ -8,7 +6,7 @@ module Scrabble
 
 		end
 
-		def valid_word?(word)
+		def self.valid_word?(word)
 			File.open("./support/dictionary.txt") do |file|
 				file.any? do |line|
 					line.include?(word.upcase)
