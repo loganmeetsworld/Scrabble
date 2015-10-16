@@ -14,7 +14,7 @@ describe "Dictionary" do
     it "returns valid words only" do
       expect(@dictionary.valid_word?("ABACAS")).to be_truthy
       expect(@dictionary.valid_word?("abamp")).to be_truthy
-      expect(@dictionary.valid_word?("flfflflfl")).to be false
+      expect(@dictionary.valid_word?("flfflflfl")).to eq false
     end
   end
 end

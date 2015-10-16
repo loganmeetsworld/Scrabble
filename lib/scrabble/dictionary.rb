@@ -10,12 +10,8 @@ module Scrabble
 
 		def valid_word?(word)
 			File.open("./support/dictionary.txt") do |file|
-				file.any? do |word|
-					if word.include?(word.upcase)
-						return true
-					else
-						false
-					end	
+				file.any? do |line|
+					line.include?(word.upcase)
 				end
 			end
 		end
