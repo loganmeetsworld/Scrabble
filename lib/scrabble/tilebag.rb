@@ -20,7 +20,6 @@ module Scrabble
         tiles_drawn.each do |letter|
           @tiles[letter] -= 1
         end
-
         return tiles_drawn
       else
         "Cannot draw that amount of tiles."

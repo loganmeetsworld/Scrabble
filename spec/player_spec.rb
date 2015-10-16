@@ -70,5 +70,9 @@ describe "Player" do
       expect(player.highest_word_score).to eq 8
       expect(player_2.highest_word_score). to eq 61
     end
+
+    it "draws tiles from the tile bag" do
+      expect((player.draw_tiles(Scrabble::TileBag.new)).length).to eq 7
+    end
   end
 end

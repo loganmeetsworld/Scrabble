@@ -6,7 +6,7 @@ module Scrabble
 		def initialize(name)
 			@name = name
 			@plays = []
-			@bag = TileBag.new
+			@bag = nil
 			@current_tiles = []
 		end
 
@@ -46,10 +46,12 @@ module Scrabble
 		end
 
 		def draw_tiles(tile_bag)
-			new_tiles = []
 			@bag = tile_bag
+			new_tiles = []
+
 			new_tiles.push(tile_bag.draw_tiles(7 - @current_tiles.length))
-			tile_array = current_tiles.push(new_tiles)
+			
+			tile_array = @current_tiles.push(new_tiles)
 			tile_array.flatten!
 		end
 	end
