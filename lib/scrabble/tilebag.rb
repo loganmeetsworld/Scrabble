@@ -13,23 +13,24 @@ module Scrabble
     end
 
     def draw_tiles(num)
-      key_array = @tiles.keys
+      if (num > 0) && (num <= 7)
+        key_array = @tiles.keys
+        tiles_drawn = key_array.sample(num)
 
-      tiles_drawn = key_array.sample(num)
+        tiles_drawn.each do |letter|
+          @tiles[letter] -= 1
+        end
 
-      tiles_drawn.each do |letter|
-        @tiles[letter] -= 1
+        return tiles_drawn
+      else
+        "Cannot draw that amount of tiles."
       end
-
-      return tiles_drawn
     end
 
     def tiles_remaining
       #returns number of tiles left in bag
-
-      tiles.each do |key, value|
-        value += value
-      end
+      tiles_remain = @tiles.values.inject{|sum, x| sum + x }
+      return tiles_remain
     end
 
   end

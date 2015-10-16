@@ -1,21 +1,23 @@
 module Scrabble
 	class Player
-		
+
 		attr_accessor :name, :plays
 
 		def initialize(name)
 			@name = name
 			@plays = []
+			@bag = TileBag.new
+			@current_tiles = []
 		end
 
 		def won?
-			if total_score >= 100 
+			if total_score >= 100
 				return true
 			else
 				return false
 			end
 		end
-		
+
 		def play(word)
 			if won?
 				false
@@ -41,6 +43,14 @@ module Scrabble
 
 		def highest_word_score
 			return Scrabble.score(@highest_score_word)
+		end
+
+		def draw_tiles(tile_bag)
+			new_tiles = []
+			@bag = tile_bag
+			new_tiles.push(tile_bag.draw_tiles(7 - @current_tiles.length))
+			tile_array = current_tiles.push(new_tiles)
+			tile_array.flatten!
 		end
 	end
 end

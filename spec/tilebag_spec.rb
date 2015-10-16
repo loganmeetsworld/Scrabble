@@ -15,11 +15,21 @@ describe "TileBag" do
     end
   end
 
-  describe "#draw_tiles" do
+  context "drawing tiles" do
+    it "doesn't allow you to draw more than seven or less than zero" do
+      expect(@tilebag.draw_tiles(10)).to eq "Cannot draw that amount of tiles."
+      expect(@tilebag.draw_tiles(-2)).to eq "Cannot draw that amount of tiles."
+      expect((@tilebag.draw_tiles(7)).class).to be Array
+    end
 
 	  it "returns random tiles" do
 	    expect(@tilebag.draw_tiles(7)).not_to eq @tilebag.draw_tiles(7)
 	  end
+
+    it "returns the correct remaining tiles" do
+      @tilebag.draw_tiles(7)
+      expect(@tilebag.tiles_remaining).to eq 91
+    end
   end# it "removes tiles from default set" do
   #   expect(drawn_tiles)
   # end
