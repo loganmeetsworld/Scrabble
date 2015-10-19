@@ -1,4 +1,4 @@
-require "./lib/scrabble_master.rb"
+require "spec_helper"
 
 describe "Player" do
   player = Scrabble::Player.new("Norman")

@@ -1,4 +1,4 @@
-require "./lib/scrabble_master.rb"
+require "spec_helper"
 
 describe "TileBag" do
   before :each do
